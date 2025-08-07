@@ -28,7 +28,7 @@ useEffect(() => {
       >
         <div className='font-poppins text-xl'>
           <span className="font-bold">QRCode</span>{' '}
-          <span className="font-normal">Generator</span>
+          <span className="font-normal">Quick</span>
         </div>
 
         {/* Hamburger for Mobile */}
