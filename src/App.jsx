@@ -12,6 +12,7 @@ import QRBackground from './components/QRBackground' // new
 const App = () => {
   return (  
     <div className="overflow-x-hidden w-full relative scroll-smooth">
+      <QRBackground/>
       <Navbar />
       <Hero />
      

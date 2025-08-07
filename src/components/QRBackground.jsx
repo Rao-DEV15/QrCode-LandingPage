@@ -1,44 +1,34 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-
-const dots = Array.from({ length: 30 }).map((_, i) => ({
-  id: i,
-  x: Math.random() * 100,
-  y: Math.random() * 100,
-  delay: Math.random() * 5,
-  duration: 6 + Math.random() * 4,
-}))
+import React, { useEffect, useRef } from 'react';
 
 const QRBackground = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const dots = 30;
+    for (let i = 0; i < dots; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'absolute w-1 h-1 bg-black/20 rounded-full animate-floatDot';
+      dot.style.left = `${Math.random() * 100}%`;
+      dot.style.top = `${Math.random() * 100}%`;
+      dot.style.animationDelay = `${Math.random() * 5}s`;
+      dot.style.animationDuration = `${6 + Math.random() * 4}s`;
+      container.appendChild(dot);
+    }
+  }, []);
+
   return (
     <div className="fixed inset-0 -z-50 overflow-hidden bg-gradient-to-br from-[#e0eaff] via-[#fdfdfd] to-[#e3faff]">
-      {/* Glow */}
-      <div className="absolute w-full h-full bg-gradient-to-tr from-indigo-200 via-white to-cyan-200 opacity-60 blur-[120px]" />
+      {/* Subtle glow */}
+      <div className="absolute w-full h-full bg-gradient-to-tr from-indigo-200 via-white to-cyan-200 opacity-40 blur-[100px]" />
 
-      {/* Floating dots */}
-      <svg className="absolute w-full h-full">
-        {dots.map((dot) => (
-          <motion.circle
-            key={dot.id}
-            cx={`${dot.x}%`}
-            cy={`${dot.y}%`}
-            r="4"
-            fill="#00000030"
-            animate={{ cy: [`${dot.y}%`, `${dot.y - 8}%`, `${dot.y}%`] }}
-            transition={{
-              duration: dot.duration,
-              repeat: Infinity,
-              delay: dot.delay,
-              ease: 'easeInOut',
-            }}
-          />
-        ))}
-      </svg>
+      {/* Floating dots container */}
+      <div ref={containerRef} className="absolute w-full h-full pointer-events-none" />
 
       {/* Grid overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(#0000000c_1px,transparent_1px)] [background-size:32px_32px] opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#0000000c_1px,transparent_1px)] [background-size:32px_32px] opacity-10 pointer-events-none" />
     </div>
-  )
-}
+  );
+};
 
-export default QRBackground
+export default QRBackground;

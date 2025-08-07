@@ -43,3 +43,17 @@ html, body {
     animation: fadeUp 0.5s ease-out both;
   }
 }
+@keyframes floatDot {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-floatDot {
+  animation-name: floatDot;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
