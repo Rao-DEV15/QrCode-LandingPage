@@ -1,8 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+useEffect(() => {
+  if (sidebarOpen) {
+    document.body.classList.add('sidebar-lock');
+  } else {
+    document.body.classList.remove('sidebar-lock');
+  }
+
+  return () => {
+    document.body.classList.remove('sidebar-lock');
+  };
+}, [sidebarOpen]);
+
 
   return (
     <div className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
@@ -46,37 +59,32 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
-      {/* Sidebar Overlay */}
-      {sidebarOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-30 z-30" onClick={() => setSidebarOpen(false)}></div>
-      )}
+    {/* Sidebar */}
+<div
+  className={`fixed top-0 left-0 h-screen w-72 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} overflow-y-auto`}
 
-      {/* Sidebar */}
-      <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out
-        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
-      >
-        <div className="flex items-center justify-between px-6 py-4 border-b">
-          <span className="text-xl font-bold">Menu</span>
-          <button onClick={() => setSidebarOpen(false)} className="text-gray-600 hover:text-black">
-            ✕
-          </button>
-        </div>
+>
+  <div className="flex items-center justify-between px-6 py-5 border-b">
+    <span className="text-2xl font-bold">Menu</span>
+    <button onClick={() => setSidebarOpen(false)} className="text-2xl text-gray-600 hover:text-black">
+      ✕
+    </button>
+  </div>
 
-        <ul className="flex flex-col px-6 py-4 space-y-4 text-black font-medium">
-          <a href="#products" onClick={() => setSidebarOpen(false)} className="cursor-pointer hover:text-blue-500">Product</a>
-          <a href="#solutions" onClick={() => setSidebarOpen(false)} className="cursor-pointer hover:text-blue-500">Solutions</a>
-          <a href="#blog" onClick={() => setSidebarOpen(false)} className="cursor-pointer hover:text-blue-500">Blog</a>
-          <a href="#pricing" onClick={() => setSidebarOpen(false)} className="cursor-pointer hover:text-blue-500">Pricing</a>
+  <ul className="flex flex-col px-6 py-6 space-y-6 text-black font-medium text-lg">
+    <a href="#products" onClick={() => setSidebarOpen(false)} className="hover:text-blue-500">Product</a>
+    <a href="#solutions" onClick={() => setSidebarOpen(false)} className="hover:text-blue-500">Solutions</a>
+    <a href="#blog" onClick={() => setSidebarOpen(false)} className="hover:text-blue-500">Blog</a>
+    <a href="#pricing" onClick={() => setSidebarOpen(false)} className="hover:text-blue-500">Pricing</a>
 
-          <button className="w-full mt-6 border border-blue-600 text-blue-600 px-4 py-2 rounded-xl text-sm hover:bg-blue-100 transition duration-300">
-            Try for Free
-          </button>
-          <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-xl text-sm hover:bg-blue-700 transition duration-300">
-            Login
-          </button>
-        </ul>
-      </div>
+    <button className="w-full mt-8 border border-blue-600 text-blue-600 px-5 py-3 rounded-xl text-base hover:bg-blue-100 transition duration-300">
+      Try for Free
+    </button>
+    <button className="w-full bg-blue-600 text-white px-5 py-3 rounded-xl text-base hover:bg-blue-700 transition duration-300">
+      Login
+    </button>
+  </ul>
+</div>
     </div>
   );
 };

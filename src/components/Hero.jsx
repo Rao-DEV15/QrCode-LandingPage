@@ -9,7 +9,8 @@ const fadeUp = {
 
 const Hero = () => {
   return (
-    <section className="w-full max-w-screen-xl mx-auto px-4 py-20 sm:px-6 mt-6">
+<section className="w-full max-w-screen-xl mx-auto px-4 py-24 sm:px-6 mt-20 lg:mt-10 min-h-[90vh] ">
+
       <div className="flex flex-col-reverse xl:flex-row items-center xl:justify-between gap-12 xl:gap-20">
 
         {/* Left Content */}
@@ -19,9 +20,11 @@ const Hero = () => {
           animate="animate"
           className="w-full max-w-xl text-center xl:text-left flex flex-col items-center xl:items-start z-10"
         >
-          <h1 className="font-poppins font-bold text-3xl sm:text-4xl md:text-5xl xl:text-5xl leading-snug text-gray-900">
-            Create unique QR <br /> codes in seconds
-          </h1>
+ <h1 className="font-poppins font-bold text-3xl min-[360px]:text-4xl sm:text-5xl md:text-5xl lg:text-5xl leading-snug text-gray-900 text-center sm:text-left">
+  Create unique QR <br /> codes in seconds
+</h1>
+
+
 
           <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-md">
             Build interactive digital experiences with your customers with a few clicks. Try it now!

@@ -3,7 +3,7 @@ import { Contact2, Link, Wallet, MapPin } from "lucide-react";
 
 const ProductCard = ({ icon: Icon, title, description }) => {
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-500">
+    <div className=" bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-500">
       <div className="text-blue-600 mb-4">
         <Icon size={40} strokeWidth={1.5} />
       </div>
@@ -38,7 +38,7 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section className="py-24 px-6 sm:px-10 bg-gray-50" id="products">
+    <section className="py-24 px-6 sm:px-10 " id="products">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
           Powerful QR Code Tools for Every Need

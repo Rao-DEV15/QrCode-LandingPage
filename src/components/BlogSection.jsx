@@ -26,7 +26,7 @@ const blogPosts = [
 
 const BlogSection = () => {
   return (
-    <section className="py-24 px-6 sm:px-10 bg-white" id="blog">
+    <section className="py-24 px-6 sm:px-10 " id="blog">
       <div className="max-w-6xl mx-auto text-center">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight animate-fade-up" style={{ animationDelay: '0ms' }}>
   From Our Blog
