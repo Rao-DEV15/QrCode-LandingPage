@@ -1,26 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { Contact2, Link, Wallet, MapPin } from "lucide-react";
 
 const ProductCard = ({ icon: Icon, title, description }) => {
-  const ref = useRef();
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.4 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div
-      ref={ref}
-      className={`bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-500 ease-out transform 
-        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-      `}
-    >
+    <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-500">
       <div className="text-blue-600 mb-4">
         <Icon size={40} strokeWidth={1.5} />
       </div>

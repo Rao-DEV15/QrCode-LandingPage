@@ -1,5 +1,4 @@
 import { Briefcase, Camera, CalendarCheck, Utensils } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const solutions = [
   {
@@ -28,37 +27,25 @@ const Solutions = () => {
   return (
     <section className="bg-gray-50 py-24 px-6 sm:px-10" id="solutions">
       <div className="max-w-6xl mx-auto text-center">
-        <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight animate-fade-up">
           Tailored QR Code Solutions for Every Industry
-        </motion.h2>
+        </h2>
 
-        <motion.p
-          className="text-base sm:text-lg text-gray-600 mb-12 max-w-2xl mx-auto"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-        >
+        <p className="text-base sm:text-lg text-gray-600 mb-12 max-w-2xl mx-auto animate-fade-up">
           From restaurants to creators, our smart QR solutions are designed to boost engagement and make access seamless.
-        </motion.p>
+        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {solutions.map((solution, index) => (
-            <motion.div
+            <div
               key={index}
-              className="bg-white shadow-md rounded-2xl p-6 text-left hover:shadow-lg transition-shadow duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className={`bg-white shadow-md rounded-2xl p-6 text-left hover:shadow-lg transition-shadow duration-300 animate-fade-up`}
+              style={{ animationDelay: `${index * 100}ms`, animationFillMode: "both" }}
             >
               <div className="mb-4">{solution.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
               <p className="text-gray-600 text-sm">{solution.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

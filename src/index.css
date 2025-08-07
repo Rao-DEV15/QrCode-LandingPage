@@ -40,6 +40,6 @@ html, body {
   }
 
   .animate-fade-up {
-    animation: fadeUp 0.5s ease-out forwards;
+    animation: fadeUp 0.5s ease-out both;
   }
 }
