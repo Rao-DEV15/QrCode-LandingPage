@@ -5,7 +5,7 @@ import ProductsSection from './components/ProductSection'
 import Solutions from './components/Solutions'
 import Footer from './components/Footer'
 import QRBackground from './components/QRBackground' // new
-import Qrquick from './components/qrtool/qrquick'
+import Qrquick from './components/qrtool/Qrquick'
 import InsightsSection from './components/InsightsSection'
 
 const App = () => {
