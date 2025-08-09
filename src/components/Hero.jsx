@@ -7,26 +7,27 @@ const fadeUp = {
 };
 
 const Hero = ({ onCreateClick }) => {
-  useEffect(() => {  
-     const element = document.getElementById('qrquick');
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
+useEffect(() => {
+  if (window.scrollY === 0) {
+    const element = document.getElementById("qrquick");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   }
+  
+  document.title = "QrCode Quick – Create Free QR Codes in Seconds";
 
+  const metaDescription = document.createElement("meta");
+  metaDescription.name = "description";
+  metaDescription.content =
+    "Build interactive digital experiences with QrCode Quick. Create custom QR codes for links, Wi-Fi, contact info, and payments in just seconds.";
+  document.head.appendChild(metaDescription);
 
-    
-    document.title = "QrCode Quick – Create Free QR Codes in Seconds";
+  return () => {
+    document.head.removeChild(metaDescription);
+  };
+}, []);
 
-    const metaDescription = document.createElement("meta");
-    metaDescription.name = "description";
-    metaDescription.content =
-      "Build interactive digital experiences with QrCode Quick. Create custom QR codes for links, Wi-Fi, contact info, and payments in just seconds.";
-    document.head.appendChild(metaDescription);
-
-    return () => {
-      document.head.removeChild(metaDescription);
-    };
-  }, []);
 
   return (
     <section

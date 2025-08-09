@@ -8,6 +8,8 @@ import QRBackground from './components/QRBackground' // new
 import Qrquick from './components/qrtool/Qrquick'
 import InsightsSection from './components/InsightsSection'
 
+
+
 const App = () => {
   return (  
     <div className="overflow-x-hidden w-full relative scroll-smooth">
