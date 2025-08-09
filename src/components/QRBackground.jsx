@@ -22,10 +22,12 @@ const QRBackground = () => {
         {dots.map((dot) => (
           <div
             key={dot.key}
-            className="absolute w-1 h-1 bg-black/20 rounded-full animate-floatDot"
+            className="absolute rounded-full animate-floatDot bg-black/30"  // increased opacity from 20% to 30%
             style={{
               left: dot.left,
               top: dot.top,
+              width: '4px',   // bigger than before (was 1px)
+              height: '4px',
               animationDelay: dot.delay,
               animationDuration: dot.duration,
             }}

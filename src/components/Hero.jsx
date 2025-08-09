@@ -1,56 +1,67 @@
-import React from 'react';
-import Price from './Price';
-import { motion } from 'framer-motion';
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const Hero = () => {
+const Hero = ({ onCreateClick }) => {
+  useEffect(() => {  
+     const element = document.getElementById('qrquick');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+
+
+    
+    document.title = "QrCode Quick – Create Free QR Codes in Seconds";
+
+    const metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    metaDescription.content =
+      "Build interactive digital experiences with QrCode Quick. Create custom QR codes for links, Wi-Fi, contact info, and payments in just seconds.";
+    document.head.appendChild(metaDescription);
+
+    return () => {
+      document.head.removeChild(metaDescription);
+    };
+  }, []);
+
   return (
-<section
-  className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 min-h-[100vh] flex flex-col justify-center"
+    <section
+      id="hero"
+      className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 min-h-[100vh] flex flex-col items-center justify-center lg:-mt-5 lg:scale-110"
+    >
+      <motion.div
+        variants={fadeUp}
+        initial="initial"
+        animate="animate"
+        className="w-full max-w-xl text-center flex flex-col items-center z-10"
+      >
+        <h1 className="font-poppins font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight text-gray-900">
+          Create Free QR <br /> Codes in Seconds
+        </h1>
+
+        <p className="mt-4 text-lg sm:text-xl text-gray-600 max-w-md">
+          Build interactive digital experiences with your customers with just a
+          few clicks — no account needed.
+        </p>
+
+       <button
+  onClick={() => {
+    const element = document.getElementById('qrquick');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }}
+  className="mt-8 bg-blue-600 text-white font-semibold px-8 py-3 rounded-md hover:bg-blue-700 transition duration-300 text-lg"
+  aria-label="Create your free QR code"
 >
-      <div className="flex flex-col-reverse xl:flex-row  items-center xl:justify-between gap-12 xl:gap-20">
+  Create Your Free QR Code
+</button>
 
-        {/* Left Content */}
-        <motion.div
-          variants={fadeUp}
-          initial="initial"
-          animate="animate"
-          className="w-full max-w-xl text-center xl:text-left flex flex-col items-center xl:items-start z-10"
-        >
- <h1 className="font-poppins font-bold text-3xl min-[360px]:text-4xl sm:text-5xl md:text-5xl lg:text-5xl leading-snug text-gray-900 text-center sm:text-left">
-  Create unique QR <br /> codes in seconds
-</h1>
-
-
-
-          <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-md">
-            Build interactive digital experiences with your customers with a few clicks. Try it now!
-          </p>
-
-          <form className="mt-6 flex flex-col sm:flex-row items-center justify-center xl:justify-start gap-3 w-full max-w-md">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full sm:w-64 lg:w-72 xl:w-80 px-4 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button
-              type="submit"
-              className="font-inter bg-blue-600 text-white px-5 py-2.5 rounded-md hover:bg-blue-700 transition w-full sm:w-auto text-base lg:text-lg"
-            >
-              Sign up
-            </button>
-          </form>
-        </motion.div>
-
-        {/* Right Content */}
-        <div className="hidden xl:block ">
-          <Price />
-        </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
