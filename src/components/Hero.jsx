@@ -9,9 +9,10 @@ const fadeUp = {
 
 const Hero = () => {
   return (
-<section className="w-full max-w-screen-xl mx-auto px-4 py-24 sm:px-6 mt-20 lg:mt-10 min-h-[90vh] ">
-
-      <div className="flex flex-col-reverse xl:flex-row items-center xl:justify-between gap-12 xl:gap-20">
+<section
+  className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 min-h-[100vh] flex flex-col justify-center"
+>
+      <div className="flex flex-col-reverse xl:flex-row  items-center xl:justify-between gap-12 xl:gap-20">
 
         {/* Left Content */}
         <motion.div
@@ -46,7 +47,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Right Content */}
-        <div className="hidden xl:block">
+        <div className="hidden xl:block ">
           <Price />
         </div>
       </div>

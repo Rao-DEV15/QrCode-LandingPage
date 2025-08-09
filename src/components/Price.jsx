@@ -27,7 +27,7 @@ const Price = () => {
   ];
 
   return (
-    <div className="flex justify-center items-start mt-10 gap-4 px-4 pb-16 mr-4">
+    <div className="flex justify-center items-start mt-20 gap-4 px-4 pb-16 mr-4">
       {plans.map((plan, index) => (
         <PriceCard key={index} index={index} {...plan} />
       ))}
