@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Footer = () => {
+  const [submitted, setSubmitted] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add logic for form submission (e.g., API call)
     console.log('Newsletter subscription submitted');
+    
+    setSubmitted(true);
+
+    // Hide message after 3 seconds (optional)
+    setTimeout(() => setSubmitted(false), 3000);
   };
 
   return (
@@ -78,12 +85,23 @@ const Footer = () => {
               Subscribe
             </button>
           </form>
+
+          {/* Notification message */}
+          {submitted && (
+            <p
+              role="alert"
+              className="mt-3 text-green-400 font-semibold"
+              aria-live="polite"
+            >
+              Thanks for subscribing!
+            </p>
+          )}
         </div>
       </div>
 
       {/* Bottom Line */}
       <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} QRConnect. All rights reserved.
+        &copy; {new Date().getFullYear()} QRQuick. All rights reserved.
       </div>
     </footer>
   );

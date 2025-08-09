@@ -3,6 +3,7 @@ import { QRCode } from 'react-qrcode-logo';
 import Navbar from '../Navbar';
 import DownloadButton from './DownloadButton';
 import { Helmet } from 'react-helmet';
+import { HexColorPicker } from "react-colorful";
 
 const Qrquick = () => {
   const [size, setSize] = useState(window.innerWidth <= 320 ? 250 : 300);
@@ -280,12 +281,10 @@ useEffect(() => {
 
           <div>
             <label className="block font-semibold mb-1">Choose QR Color</label>
-            <input
-              type="color"
-              value={fgColor}
-              onChange={(e) => setFgColor(e.target.value)}
-              className="w-16 h-10 p-0 border rounded"
-            />
+          
+         <HexColorPicker color={fgColor} onChange={setFgColor} />
+      <p className="mt-2 text-gray-600">Selected color: {fgColor}</p>
+        
           </div>
 
           <div>

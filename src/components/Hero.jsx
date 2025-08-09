@@ -45,8 +45,7 @@ useEffect(() => {
         </h1>
 
         <p className="mt-4 text-lg sm:text-xl text-gray-600 max-w-md">
-          Build interactive digital experiences with your customers with just a
-          few clicks — no account needed.
+          Fast & Simple Custom QR Code Generator | Add Colors & Logos | Create Wi-Fi, Phone & More Codes
         </p>
 
        <button
