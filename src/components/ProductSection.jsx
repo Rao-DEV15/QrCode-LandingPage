@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { Helmet } from "react-helmet";
 import { Contact2, Link, Wallet, MapPin } from "lucide-react";
 
 const ProductCard = ({ icon: Icon, title, description }) => {
@@ -14,29 +15,6 @@ const ProductCard = ({ icon: Icon, title, description }) => {
 };
 
 const ProductsSection = () => {
-  // Pure React SEO injection
-  useEffect(() => {
-    document.title =
-      "QR Code Solutions – Digital Business Cards, Payments, Location Sharing | QrQuick";
-
-    const metaDescription = document.createElement("meta");
-    metaDescription.name = "description";
-    metaDescription.content =
-      "Discover QrQuick’s range of powerful QR code tools – create business card QR codes, share all your links in one scan, accept QR payments, and guide customers to your location effortlessly.";
-    document.head.appendChild(metaDescription);
-
-    const metaKeywords = document.createElement("meta");
-    metaKeywords.name = "keywords";
-    metaKeywords.content =
-      "QR code generator, digital business card, QR payments, QR location sharing, QR link in bio, contactless payments";
-    document.head.appendChild(metaKeywords);
-
-    return () => {
-      document.head.removeChild(metaDescription);
-      document.head.removeChild(metaKeywords);
-    };
-  }, []);
-
   const products = [
     {
       icon: Contact2,
@@ -66,6 +44,22 @@ const ProductsSection = () => {
 
   return (
     <section className="py-24 px-6 sm:px-10" id="products">
+      {/* Helmet for SEO */}
+      <Helmet>
+        <title>
+          QR Code Solutions – Digital Business Cards, Payments, Location
+          Sharing | QrQuick
+        </title>
+        <meta
+          name="description"
+          content="Discover QrQuick’s range of powerful QR code tools – create business card QR codes, share all your links in one scan, accept QR payments, and guide customers to your location effortlessly."
+        />
+        <meta
+          name="keywords"
+          content="QR code generator, digital business card, QR payments, QR location sharing, QR link in bio, contactless payments"
+        />
+      </Helmet>
+
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
           Powerful QR Code Tools for Every Need

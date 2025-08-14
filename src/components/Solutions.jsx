@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { Helmet } from "react-helmet";
 import { Briefcase, Camera, CalendarCheck, Utensils } from "lucide-react";
 
 const solutions = [
@@ -29,31 +30,23 @@ const solutions = [
 ];
 
 const Solutions = () => {
-  // Pure React SEO
-  useEffect(() => {
-    document.title =
-      "QR Code Solutions for Businesses, Creators, Events, and Restaurants | QrCode Quick";
-
-    const metaDescription = document.createElement("meta");
-    metaDescription.name = "description";
-    metaDescription.content =
-      "Explore industry-specific QR code solutions from QrCode Quick — small business QR codes, influencer link hubs, event access codes, and restaurant digital menus.";
-    document.head.appendChild(metaDescription);
-
-    const metaKeywords = document.createElement("meta");
-    metaKeywords.name = "keywords";
-    metaKeywords.content =
-      "QR code for small business, QR menu, event QR code, influencer QR code, restaurant QR payment, digital menu QR";
-    document.head.appendChild(metaKeywords);
-
-    return () => {
-      document.head.removeChild(metaDescription);
-      document.head.removeChild(metaKeywords);
-    };
-  }, []);
-
   return (
     <section className="py-24 px-6 sm:px-10" id="solutions">
+      {/* Helmet for SEO */}
+      <Helmet>
+        <title>
+          QR Code Solutions for Businesses, Creators, Events, and Restaurants | QrCode Quick
+        </title>
+        <meta
+          name="description"
+          content="Explore industry-specific QR code solutions from QrCode Quick — small business QR codes, influencer link hubs, event access codes, and restaurant digital menus."
+        />
+        <meta
+          name="keywords"
+          content="QR code for small business, QR menu, event QR code, influencer QR code, restaurant QR payment, digital menu QR"
+        />
+      </Helmet>
+
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight animate-fade-up">
           Tailored QR Code Solutions for Every Industry

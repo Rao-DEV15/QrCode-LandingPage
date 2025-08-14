@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Allow: /
+
+Sitemap: https://qrquickk.vercel.app/sitemap.xml

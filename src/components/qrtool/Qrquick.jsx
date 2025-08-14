@@ -97,7 +97,7 @@ useEffect(() => {
         <title>QrQuick – Free Custom QR Code Generator</title>
         <meta
           name="description"
-          content="Create free custom QR codes instantly with QrCode Quick. Add colors, logos, and styles for links, Wi-Fi, contacts, emails, and more."
+          content="Create free custom QR codes instantly with QrQuick. Add colors, logos, and styles for links, Wi-Fi, contacts, emails, and more."
         />
       </Helmet>
       <div className="w-full text-center p-4 mb-4">
