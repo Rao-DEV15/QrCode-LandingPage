@@ -3,10 +3,10 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 const SeoHead = ({
-  title = "QrCode Quick – Free Custom QR Code Generator",
-  description = "Create free custom QR codes instantly with QrCode Quick. Add colors, logos, and styles for links, Wi-Fi, contacts, emails, and more.",
-  url = "https://example.com", // Placeholder until domain is ready
-  image = "https://example.com/og-image.jpg", // Placeholder image
+  title = "QrQuick – Free Custom QR Code Generator",
+  description = "Create free custom QR codes instantly with QrQuick. Add colors, logos, and styles for links, Wi-Fi, contacts, emails, and more.",
+  url = "https://qrquickk.vercel.app/", // Placeholder until domain is ready
+  image = "./Favicon.png", // Placeholder image
 }) => {
   return (
     <Helmet>

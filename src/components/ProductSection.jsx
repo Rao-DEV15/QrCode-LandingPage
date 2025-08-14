@@ -17,12 +17,12 @@ const ProductsSection = () => {
   // Pure React SEO injection
   useEffect(() => {
     document.title =
-      "QR Code Solutions – Digital Business Cards, Payments, Location Sharing | QrCode Quick";
+      "QR Code Solutions – Digital Business Cards, Payments, Location Sharing | QrQuick";
 
     const metaDescription = document.createElement("meta");
     metaDescription.name = "description";
     metaDescription.content =
-      "Discover QrCode Quick’s range of powerful QR code tools – create business card QR codes, share all your links in one scan, accept QR payments, and guide customers to your location effortlessly.";
+      "Discover QrQuick’s range of powerful QR code tools – create business card QR codes, share all your links in one scan, accept QR payments, and guide customers to your location effortlessly.";
     document.head.appendChild(metaDescription);
 
     const metaKeywords = document.createElement("meta");
