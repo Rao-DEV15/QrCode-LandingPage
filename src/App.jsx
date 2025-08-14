@@ -12,7 +12,7 @@ import InsightsSection from "./components/InsightsSection";
 const App = () => {
   return (
     <div className="overflow-x-hidden w-full relative scroll-smooth">
-      {/* Default SEO meta */}
+      {/* Default SEO meta + GA4 */}
       <Helmet>
         <title>QrCode Quick – Free Custom QR Code Generator</title>
         <meta
@@ -23,6 +23,17 @@ const App = () => {
           name="keywords"
           content="QR code generator, free QR code, custom QR code, scan code, QR payments, QR menu"
         />
+
+        {/* Google Analytics GA4 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-51DPWN6974"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-51DPWN6974');
+          `}
+        </script>
       </Helmet>
 
       <Hero />
