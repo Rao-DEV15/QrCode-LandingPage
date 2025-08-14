@@ -14,7 +14,7 @@ const App = () => {
     <div className="overflow-x-hidden w-full relative scroll-smooth">
       {/* Default SEO meta + GA4 */}
       <Helmet>
-        <title>QrCode Quick – Free Custom QR Code Generator</title>
+        <title>QrQuick – Free Custom QR Code Generator</title>
         <meta
           name="description"
           content="Create free QR codes instantly with QrCode Quick. Add colors, logos, and custom designs for links, Wi-Fi, contact info, payments, and more."
